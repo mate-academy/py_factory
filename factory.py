@@ -30,8 +30,11 @@ class Zoo:
             csv = list(reader(csvfile, delimiter=','))
             for animal_type, name, weight in csv:
                 if animal_type in self._existing_animals:
-                    animal = self._existing_animals[animal_type](name, float(weight))
-                    self._animals.append(animal)
+                    try:
+                        animal = self._existing_animals[animal_type](name, float(weight))
+                        self._animals.append(animal)
+                    except ValueError:
+                        print("ValueError")
 
     def existing_animals(self):
         """get all existing animals"""

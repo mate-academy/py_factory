@@ -3,9 +3,11 @@ import factory
 
 def test_zoo():
     z = factory.Zoo('zoo.csv')
-    assert [animal.say() for animal in z.animals()] == ['Woof', 'Meow', 'Meow', 'Tweet']
+    # + Platypus,Perry,1.2 -> Quack
+    assert [animal.say() for animal in z.get_animals()] == ['Woof', 'Meow', 'Meow', 'Quack', 'Tweet']
 
 
 def test_weight():
     z = factory.Zoo('zoo.csv')
-    assert sum(animal.weight for animal in z.animals()) == 48.4
+    # + Platypus,Perry,1.2
+    assert sum(animal.get_weight() for animal in z.get_animals()) == 49.6

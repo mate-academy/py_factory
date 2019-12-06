@@ -88,36 +88,36 @@ class Zoo:
 
     def __init__(self, filename):
         self._animals = []
-
-        with open(filename, 'rt') as file:
-            animals_csv = list(reader(file, delimiter=','))
-            for animal in animals_csv:
-                if animal[0] == 'Dog':
-                    new_animal = Dog(
-                        animal[1],
-                        float(animal[2])
-                    )
-                    self.add(new_animal)
-                if animal[0] == 'Cat':
-                    new_animal = Cat(
-                        animal[1],
-                        float(animal[2])
-                    )
-                    self.add(new_animal)
-                elif animal[0] == 'Bird':
-                    new_animal = Bird(
-                        animal[1],
-                        float(animal[2])
-                    )
-                    self.add(new_animal)
-                elif animal[0] == 'Platypus':
-                    new_animal = Platypus(
-                        animal[1],
-                        float(animal[2])
-                    )
-                    self.add(new_animal)
-                else:
-                    raise ValueError
+        try:
+            with open(filename, 'rt') as file:
+                animals_csv = list(reader(file, delimiter=','))
+                for animal in animals_csv:
+                    if animal[0] == 'Dog':
+                        new_animal = Dog(
+                            animal[1],
+                            float(animal[2])
+                        )
+                        self.add(new_animal)
+                    if animal[0] == 'Cat':
+                        new_animal = Cat(
+                            animal[1],
+                            float(animal[2])
+                        )
+                        self.add(new_animal)
+                    elif animal[0] == 'Bird':
+                        new_animal = Bird(
+                            animal[1],
+                            float(animal[2])
+                        )
+                        self.add(new_animal)
+                    elif animal[0] == 'Platypus':
+                        new_animal = Platypus(
+                            animal[1],
+                            float(animal[2])
+                        )
+                        self.add(new_animal)
+        except ValueError:
+            print("Oops!  That was no valid data.  Try again...")
 
     def get_animals(self):
         """Return the list of animals of zoo.

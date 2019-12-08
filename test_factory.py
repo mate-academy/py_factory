@@ -1,11 +1,22 @@
+"""
+docstring
+"""
 import factory
 
 
 def test_zoo():
+    """
+
+    :return:
+    """
     z = factory.Zoo('zoo.csv')
-    assert [animal.say() for animal in z.animals()] == ['Woof', 'Meow', 'Meow', 'Tweet']
+    assert z.say() == ['Woof', 'Meow', 'Meow', 'Crr', 'Tweet']
 
 
 def test_weight():
+    """
+
+    :return:
+    """
     z = factory.Zoo('zoo.csv')
-    assert sum(animal.weight for animal in z.animals()) == 48.4
+    assert z.get_weight() == 49.6

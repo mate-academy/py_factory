@@ -8,4 +8,4 @@ def test_zoo():
 
 def test_weight():
     z = factory.Zoo('zoo.csv')
-    assert sum(animal.weight for animal in z.animals()) == 48.4
+    assert sum(animal.get_weight() for animal in z.animals()) == 48.4

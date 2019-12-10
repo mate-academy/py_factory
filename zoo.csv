@@ -1,6 +1,6 @@
-type,name,weight,sound
-Dog,Bandit,30,Woof
-Cat,Tom,5,Meow
-Cat,Brown,3.4,Meow
-Platypus,Perry,1.2,Crr
-Bird,Charlie,10,Tweet
+type,name,weight
+Dog,Bandit,30
+Cat,Tom,5
+Cat,Brown,3.4
+Platypus,Perry,1.2
+Bird,Charlie,10
